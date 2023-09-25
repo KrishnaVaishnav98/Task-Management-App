@@ -1,6 +1,6 @@
 # ProTask
 
-Link : <a href="[https://protask.netlify.app/]">[https://protask.netlify.app]/</a>
+Link : <a href="https://protask.netlify.app/">https://protask.netlify.app/</a>
 
 ## What is ProTask about?
 
