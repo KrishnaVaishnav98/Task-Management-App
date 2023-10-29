@@ -7,9 +7,6 @@ const ContextProvider = ({ children }) => {
   const [loggedInUser, setLoggedInUser] = useState({});
   const [userNameLogged, setUserNameLogged] = useState("");
   
-
-  
-
   return (
     <Context.Provider
       value={{

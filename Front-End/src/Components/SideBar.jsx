@@ -26,16 +26,35 @@ import { BiSolidSquareRounded } from "react-icons/bi";
 import { MdAddBox } from "react-icons/md";
 import { NavLink } from "react-router-dom";
 import { useSelector } from "react-redux";
+import AddProject from "./AddProject";
 
 const SideBar = () => {
-  //   const { isOpen, onOpen, onClose } = useDisclosure();
-  //   const btnRef = React.useRef();
+
   const [isOpen, setIsOpen] = useState(true);
+  const [isOpenPro, setIsOpenPro] = useState(false);
   const projects = useSelector((store) => store.projectReducer.projects);
 
   const toggleSidebar = () => {
     setIsOpen(!isOpen);
   };
+
+  const handleOpen = () => {
+    setIsOpen(true);
+  };
+
+  const handleClose = () => {
+    setIsOpen(false);
+  };
+
+  const handleOpenPro = () => {
+    setIsOpenPro(true);
+  };
+
+  const handleClosePro = () => {
+    setIsOpenPro(false);
+  };
+
+
   return (
     <div className="hidden  sm:hidden md:hidden lg:flex xl:flex h-screen text-md   ">
       <div
@@ -68,7 +87,10 @@ const SideBar = () => {
               <span className="text-gray-600 font-semibold ml-2">
                 Projects{" "}
               </span>
-              <MdAddBox fontWeight={"bold"} cursor="pointer" color="gray" />
+              <Button onClick={handleOpenPro} colorScheme="white">
+                {/* <MdAddBox fontWeight={"bold"} cursor="pointer" color="gray" /> */}
+                <AddProject isOpen={isOpenPro} onOpen={handleOpenPro} onClose={handleClosePro} />
+              </Button>
             </li>
             {projects.map((el) => (
               <NavLink to={`/temp/${el._id}`}>

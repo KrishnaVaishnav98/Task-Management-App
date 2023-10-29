@@ -11,7 +11,7 @@ projectRoute.post("/newproject", Auth, async (req, res) => {
   try {
     const { title, description, userId } = req.body;
 
-    // Projects with same Titles should bot be created.
+    // Projects with same Titles should not be created.
     const SameTitleExists = await ProjectModel.findOne({ title });
     if (SameTitleExists) {
       return res
